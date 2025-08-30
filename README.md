@@ -8,6 +8,21 @@ Moulinex is a simple and fast file shredder. It is primarily I/O-bound and desig
 - Processes files entirely in RAM if sufficient memory is available; otherwise, it works in 512 MB blocks.
 - File-level processing only (folders and entire drives are not supported yet).
 
+## Install
+
+To install moulinex, you have two choices :
+- compile from source (for max speed, use -Ofast):
+```
+git clone https://github.com/lolo859/moulinex
+cd moulinex
+g++ moulinex.cpp -o moulinex -O2 -march=native -flto -I.
+```
+- install from `dnf` (only supported platform for now):
+```
+sudo dnf copr lolo859/moulinex
+sudo dnf install moulinex
+```
+
 ## License
 - Moulinex is released under the MIT license.
 - Uses xsimd, which is licensed under BSD-3-Clause.
